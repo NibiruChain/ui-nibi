@@ -1,56 +1,59 @@
 {
-  "name": "@nibiruchain/vuepress-theme-cosmos",
-  "version": "0.0.183",
-  "description": "Theme for VuePress static site generator used by Nibiru, Tendermint, and Cosmos projects.",
+  "name": "@nibiruchain/ui-nibi",
+  "version": "0.0.0",
   "main": "index.js",
-  "scripts": {
-    "postversion": "git push && git push --tags"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NibiruChain/vuepress-theme-cosmos.git"
-  },
-  "keywords": [
-    "documentation",
-    "docs",
-    "cosmos",
-    "tendermint",
-    "vuepress",
-    "theme"
-  ],
-  "author": "",
   "license": "MIT",
-  "dependencies": {
-    "@cosmos-ui/vue": "^0.35.0",
-    "@vuepress/plugin-google-analytics": "1.8.2",
-    "algoliasearch": "^4.2.0",
-    "axios": "^0.24.0",
-    "cheerio": "^1.0.0-rc.3",
-    "clipboard-copy": "^4.0.1",
-    "entities": "3.0.1",
-    "esm": "^3.2.25",
-    "gray-matter": "^4.0.2",
-    "hotkeys-js": "3.8.7",
-    "jsonp": "^0.2.1",
-    "markdown-it": "^12.0.0",
-    "markdown-it-attrs": "^4.0.0",
-    "prismjs": "^1.22.0",
-    "pug": "^3.0.1",
-    "pug-plain-loader": "^1.0.0",
-    "stylus": "^0.56.0",
-    "stylus-loader": "^3.0.2",
-    "tiny-cookie": "^2.3.2",
-    "v-runtime-template": "^1.10.0",
-    "vuepress": "^1.5.4",
-    "vuepress-plugin-google-tag-manager": "0.0.5",
-    "vuepress-plugin-sitemap": "^2.3.1"
+  "private": "false",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "build": "lerna run --parallel build",
+    "lerna:publish": "lerna publish",
+    "build:watch": "lerna run --parallel build:watch",
+    "build:fresh": "yarn clean && yarn build",
+    "build:publish": "yarn build:fresh && yarn lerna:publish",
+    "build:patch:publish": "yarn build:fresh && yarn patch && yarn lerna:publish",
+    "clean": "lerna run --parallel clean && shx rm -rf .build-cache *.log coverage junit.xml",
+    "test": "jest",
+    "test:ci": "jest --coverage --ci --reporters='jest-junit'",
+    "test:unit": "jest packages/*/test/unit",
+    "test:integration": "jest packages/*/test/integration",
+    "coverage": "jest --coverage",
+    "coverage:unit": "yarn test:unit --coverage",
+    "coverage:integration": "yarn test:integration --coverage",
+    "coverage:show": "live-server coverage",
+    "lint": "eslint -c './.eslintrc.js' './packages/**/*.{ts,js}'",
+    "lint:ci": "yarn lint . --format junit",
+    "lint:md": "markdownlint --ignore node_modules --ignore .git",
+    "format": "yarn lint --fix",
+    "format:md": "yarn lint:md --fix",
+    "husky-skip": "cross-env HUSKY_SKIP_HOOKS=1",
+    "commit": "git cz",
+    "proto-gen": "yarn exec ./scripts/protocgen.sh"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.md": [
+      "yarn format:md"
+    ]
   },
   "devDependencies": {
-    "core-js": "^3.6.5",
-    "is-svg": "^4.2.2",
-    "node-forge": "^1.2.1",
-    "set-value": "^4.0.0",
-    "ssri": "^8.0.1",
-    "watchpack": "^2.0.0"
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.9.2",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.7",
+    "lerna": "^4.0.0",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
+    "typescript": "^4.4.3"
   }
 }

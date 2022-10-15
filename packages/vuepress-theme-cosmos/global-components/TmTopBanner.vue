@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import * as Cookie from "tiny-cookie"
+import * as Cookie from "tiny-cookie";
 
 export default {
   props: ["topBanner"],
@@ -20,24 +20,24 @@ export default {
       // uncomment for local testing
       // url: "https://stargate.cosmos.network?utm_source=docs",
       // content: "Prepare for <strong>Stargate tesnet</strong>, coming soon &#8594;"
-    }
+    };
   },
-  mounted () {
-    if (Cookie.get("top-banner-hidden", false)) this.show = false
-    else this.show = true
+  mounted() {
+    if (Cookie.get("top-banner-hidden", false)) this.show = false;
+    else this.show = true;
   },
   methods: {
     close() {
-      this.show = false
+      this.show = false;
 
       // reset every 7 days
-      Cookie.set("top-banner-hidden", true, { expires: '7D' })
+      Cookie.set("top-banner-hidden", true, { expires: "7D" });
     },
     beforeLeave(el) {
       el.style.marginTop = `-${el.offsetHeight}px`;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="stylus" scoped>
