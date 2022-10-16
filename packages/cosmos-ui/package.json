@@ -1,7 +1,6 @@
 {
   "name": "@nibiruchain/cosmos-ui",
-  "productName": "Tendermint UI",
-  "description": "Tendermint UI contains components for front end projects.",
+  "description": "Components for front end projects related to Cosmos, IBC, and Tendermint.",
   "version": "0.0.0",
   "license": "MIT",
   "main": "src/index.js",
