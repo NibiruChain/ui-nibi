@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "lerna run --parallel build",
-    "lerna:publish": "lerna publish",
+    "publish-all": "sh publish.sh",
     "build:watch": "lerna run --parallel build:watch",
     "build:fresh": "yarn clean && yarn build",
     "build:publish": "yarn build:fresh && yarn lerna:publish",

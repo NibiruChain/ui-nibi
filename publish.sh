@@ -1,2 +1,2 @@
-cp README.md packages/nibijs/README.md
+# publish.sh
 yarn run lerna publish from-package
