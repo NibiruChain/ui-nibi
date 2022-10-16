@@ -10,7 +10,7 @@ updates:
   labels:
   - dependencies
   ignore:
-  - dependency-name: "@cosmos-ui/vue"
+  - dependency-name: "@nibiruchain/cosmos-ui"
     versions:
     - ">= 0"
   - dependency-name: core-js

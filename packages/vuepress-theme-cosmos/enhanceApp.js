@@ -1,4 +1,4 @@
-import { Tooltip } from "@cosmos-ui/vue";
+import { Tooltip } from "@nibiruchain/cosmos-ui";
 import MarkdownIt from "markdown-it";
 
 export default ({ Vue }) => {

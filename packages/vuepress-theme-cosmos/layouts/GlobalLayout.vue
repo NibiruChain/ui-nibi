@@ -276,7 +276,7 @@ import {
   map
 } from "lodash";
 import hotkeys from "hotkeys-js";
-import { CookieBanner, SectionSearch } from "@cosmos-ui/vue";
+import { CookieBanner, SectionSearch } from "@nibiruchain/cosmos-ui";
 import axios from "axios";
 
 const endingSlashRE = /\/$/;
