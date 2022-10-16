@@ -4,6 +4,7 @@
   "description": "Theme for VuePress static site generator used by Nibiru, Tendermint, and Cosmos projects.",
   "main": "index.js",
   "scripts": {
+    "build": "",
     "postversion": "git push && git push --tags"
   },
   "repository": {

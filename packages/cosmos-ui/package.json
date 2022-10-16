@@ -8,8 +8,8 @@
   "author": "NibiruChain <dev@nibiru.fi>",
   "repository": "https://github.com/NibiruChain/ui-nibi",
   "scripts": {
-    "serve": "start-storybook -p 9999 -s ./public",
-    "build": "build-storybook -c .storybook -o dist -s ./public"
+    "serve": "start-storybook -p 9999 -s public",
+    "build": "build-storybook -c .storybook -o dist -s public"
   },
   "files": [
     "dist"
