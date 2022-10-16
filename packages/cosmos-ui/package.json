@@ -1,7 +1,7 @@
 {
   "name": "@nibiruchain/cosmos-ui",
   "description": "Components for front end projects related to Cosmos, IBC, and Tendermint.",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "src/index.js",
   "author": "NibiruChain <dev@nibiru.fi>",
@@ -10,9 +10,6 @@
     "serve": "start-storybook -p 9999 -s public",
     "build": "build-storybook -c .storybook -o dist -s public"
   },
-  "files": [
-    "dist"
-  ],
   "_moduleAliases": {
     "~cosmos-ui": "dist"
   },
